@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeInnovate — Guia de Preenchimento</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --acn-purple: #A100FF;
+  --acn-purple2: #7500C0;
+  --acn-black: #000000;
+  --acn-white: #FFFFFF;
+  --acn-gray: #F4F4F4;
+  --acn-mid: #E8E8E8;
+  --acn-muted: #6B6B6B;
+  --acn-dark: #1A1A1A;
+  --success: #009B4E;
+  --warn: #FF6B00;
+  --danger: #CC0000;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+  --step-w: 680px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--acn-white);
+  color: var(--acn-dark);
+  line-height: 1.6;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--acn-black);
+  padding: 0.65rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.topbar-logo-icon {
+  width: 28px; height: 28px;
+  background: var(--acn-purple);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; font-weight: 700; color: white;
+  flex-shrink: 0;
+}
+
+.topbar-logo-text {
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.topbar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--acn-purple);
+  color: white;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  transition: background 0.15s;
+}
+.topbar-cta:hover { background: var(--acn-purple2); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--acn-black);
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 120%, rgba(161,0,255,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acn-purple);
+  border: 1px solid rgba(161,0,255,0.4);
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.hero h1 span { color: var(--acn-purple); }
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.hero-steps-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.hero-step-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--mono);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.hero-step-pill:hover {
+  background: rgba(161,0,255,0.15);
+  border-color: rgba(161,0,255,0.4);
+  color: white;
+}
+
+.hero-step-pill .pill-num {
+  width: 18px; height: 18px;
+  background: var(--acn-purple);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-arrow {
+  color: rgba(255,255,255,0.2);
+  font-size: 0.7rem;
+  padding: 0 0.2rem;
+}
+
+/* ── LAYOUT ── */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 200px);
+}
+
+/* ── SIDEBAR NAV ── */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--acn-gray);
+  border-right: 1px solid var(--acn-mid);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 46px;
+  height: calc(100vh - 46px);
+  overflow-y: auto;
+}
+
+.sidebar-section-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acn-muted);
+  padding: 0.8rem 1.2rem 0.4rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.78rem;
+  color: var(--acn-muted);
+  cursor: pointer;
+  transition: all 0.12s;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.nav-item:hover { background: var(--acn-mid); color: var(--acn-dark); }
+.nav-item.active {
+  background: white;
+  color: var(--acn-purple);
+  border-left-color: var(--acn-purple);
+  font-weight: 600;
+}
+
+.nav-item .nav-num {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--acn-mid);
+  color: var(--acn-muted);
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.12s;
+}
+
+.nav-item.active .nav-num {
+  background: var(--acn-purple);
+  color: white;
+}
+
+.nav-item.done .nav-num {
+  background: var(--success);
+  color: white;
+}
+
+/* ── CONTENT ── */
+.content {
+  flex: 1;
+  padding: 2.5rem 3rem;
+  max-width: 800px;
+}
+
+/* ── STEP SECTIONS ── */
+.step-section {
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 70px;
+}
+
+.step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 2px solid var(--acn-mid);
+}
+
+.step-number {
+  width: 40px; height: 40px;
+  background: var(--acn-purple);
+  color: white;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-title-block { flex: 1; }
+
+.step-phase {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acn-purple);
+  margin-bottom: 0.2rem;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--acn-black);
+  line-height: 1.2;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  color: var(--acn-muted);
+  margin-top: 0.25rem;
+}
+
+/* ── INSTRUCTION CARDS ── */
+.instr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.instr-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  background: var(--acn-gray);
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--acn-mid);
+  transition: border-color 0.15s;
+}
+
+.instr-item:hover { border-left-color: var(--acn-purple); }
+
+.instr-num {
+  width: 24px; height: 24px;
+  background: var(--acn-purple);
+  color: white;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.instr-text {
+  font-size: 0.84rem;
+  color: var(--acn-dark);
+  line-height: 1.55;
+}
+
+.instr-text strong { color: var(--acn-black); font-weight: 600; }
+.instr-text code {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: rgba(161,0,255,0.08);
+  color: var(--acn-purple2);
+  padding: 0.05rem 0.35rem;
+}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight-box {
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--acn-purple);
+  background: rgba(161,0,255,0.05);
+  font-size: 0.84rem;
+  color: var(--acn-dark);
+}
+
+.highlight-box.warn {
+  border-left-color: var(--danger);
+  background: rgba(204,0,0,0.04);
+}
+
+.highlight-box.success {
+  border-left-color: var(--success);
+  background: rgba(0,155,78,0.04);
+}
+
+.highlight-box strong { display: block; margin-bottom: 0.2rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.highlight-box.warn strong { color: var(--danger); }
+.highlight-box.success strong { color: var(--success); }
+.highlight-box:not(.warn):not(.success) strong { color: var(--acn-purple); }
+
+/* ── FORK PATHS ── */
+.fork {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.fork-option {
+  padding: 1rem;
+  border: 1px solid var(--acn-mid);
+  background: white;
+}
+
+.fork-option-title {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--acn-mid);
+}
+
+.fork-option.approve .fork-option-title { color: var(--success); }
+.fork-option.reject .fork-option-title { color: var(--danger); }
+.fork-option.with .fork-option-title { color: var(--acn-purple); }
+.fork-option.without .fork-option-title { color: var(--acn-muted); }
+
+.fork-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--acn-dark);
+  padding: 0.25rem 0;
+}
+
+.fork-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--acn-muted);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+/* ── LIFECYCLE DIAGRAM ── */
+.lifecycle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.lc-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1;
+  min-width: 90px;
+}
+
+.lc-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  border: 2px solid var(--acn-mid);
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+.lc-step.active .lc-icon {
+  background: var(--acn-purple);
+  border-color: var(--acn-purple);
+}
+
+.lc-label {
+  font-size: 0.65rem;
+  font-family: var(--mono);
+  text-align: center;
+  color: var(--acn-muted);
+  line-height: 1.3;
+}
+
+.lc-step.active .lc-label { color: var(--acn-purple); font-weight: 600; }
+
+.lc-arrow {
+  color: var(--acn-mid);
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ── FIELD TABLE ── */
+.field-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.82rem;
+}
+
+.field-table th {
+  background: var(--acn-black);
+  color: white;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.9rem;
+  text-align: left;
+}
+
+.field-table td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--acn-mid);
+  vertical-align: top;
+}
+
+.field-table tr:nth-child(even) td { background: var(--acn-gray); }
+.field-table tr:hover td { background: rgba(161,0,255,0.04); }
+
+.field-required {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  padding: 0.1rem 0.3rem;
+  background: rgba(204,0,0,0.1);
+  color: var(--danger);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.field-optional {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  padding: 0.1rem 0.3rem;
+  background: rgba(107,107,107,0.1);
+  color: var(--acn-muted);
+  letter-spacing: 0.05em;
+}
+
+.field-tip {
+  font-size: 0.75rem;
+  color: var(--acn-muted);
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+
+/* ── REDFLAG ALERT ── */
+.redflag-card {
+  background: #fff5f5;
+  border: 1px solid rgba(204,0,0,0.2);
+  border-top: 4px solid var(--danger);
+  padding: 1.2rem;
+  margin: 1.2rem 0;
+}
+
+.redflag-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--danger);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.redflag-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.redflag-list li {
+  font-size: 0.82rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--acn-dark);
+}
+
+.redflag-list li::before {
+  content: '⚠';
+  color: var(--danger);
+  flex-shrink: 0;
+  margin-top: 0px;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: var(--acn-black);
+  margin: 3rem -3rem -2.5rem;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cta-section-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.cta-section-text p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--acn-purple);
+  color: white;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.65rem 1.3rem;
+  transition: background 0.15s;
+}
+.cta-btn-primary:hover { background: var(--acn-purple2); }
+
+.cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.65rem 1.3rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.15s;
+}
+.cta-btn-secondary:hover { border-color: var(--acn-purple); color: white; }
+
+/* ── PROGRESS TRACKER ── */
+.progress-tracker {
+  background: white;
+  border: 1px solid var(--acn-mid);
+  border-top: 3px solid var(--acn-purple);
+  padding: 1rem 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.pt-title {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acn-muted);
+  margin-bottom: 0.7rem;
+}
+
+.pt-steps {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.pt-step {
+  flex: 1;
+  height: 5px;
+  background: var(--acn-mid);
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.pt-step.done { background: var(--success); }
+.pt-step.active { background: var(--acn-purple); }
+
+.pt-labels {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.pt-label {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  color: var(--acn-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.pt-label.active { color: var(--acn-purple); font-weight: 600; }
+
+/* ── AMBASSADOR BOX ── */
+.ambassador-box {
+  background: linear-gradient(135deg, rgba(161,0,255,0.05), rgba(117,0,192,0.08));
+  border: 1px solid rgba(161,0,255,0.2);
+  padding: 1.1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.amb-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.amb-content { flex: 1; }
+.amb-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acn-purple);
+  margin-bottom: 0.2rem;
+}
+
+.amb-text {
+  font-size: 0.82rem;
+  color: var(--acn-dark);
+  line-height: 1.5;
+}
+
+.amb-emails {
+  margin-top: 0.4rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.amb-email {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  background: rgba(161,0,255,0.1);
+  color: var(--acn-purple2);
+  padding: 0.15rem 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-section { animation: fadeIn 0.4s ease both; }
+
+
+/* ── LANGUAGE BAR ── */
+.lang-bar {
+  background: var(--acn-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 46px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.lang-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.lang-bar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.lang-bar-icon {
+  width: 26px; height: 26px;
+  background: var(--acn-purple);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700; color: white;
+}
+
+.lang-bar-name {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.lang-sep {
+  width: 1px; height: 18px;
+  background: rgba(255,255,255,0.12);
+}
+
+.lang-tag {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lang-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Language toggle pill group */
+.lang-toggle {
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.15);
+  overflow: hidden;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 1.1rem;
+  background: transparent;
+  color: rgba(255,255,255,0.45);
+  cursor: pointer;
+  border: none;
+  transition: all 0.18s;
+  letter-spacing: 0.01em;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+}
+
+.lang-btn:last-child { border-right: none; }
+
+.lang-btn:hover {
+  color: white;
+  background: rgba(255,255,255,0.06);
+}
+
+.lang-btn.active {
+  background: var(--acn-purple);
+  color: white;
+}
+
+.lang-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: white;
+  opacity: 0.3;
+}
+
+.lang-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.15s;
+  font-family: var(--sans);
+  margin-left: 0.5rem;
+}
+.lang-portal-btn:hover {
+  border-color: var(--acn-purple);
+  color: white;
+}
+
+/* ── PANELS ── */
+.lang-panel { display: none; }
+.lang-panel.active { display: block; }
+
+/* Hide original topbar */
+.topbar { display: none !important; }
+
+/* Sidebar offset */
+.sidebar {
+  top: 46px;
+  height: calc(100vh - 46px);
+}
+
+/* Smooth transition on panel switch */
+.lang-panel.active {
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <div class="lang-bar-left">
+    <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="lang-bar-logo">
+      <div class="lang-bar-icon">></div>
+      <span class="lang-bar-name">Accenture · WeInnovate</span>
+    </a>
+    <div class="lang-sep"></div>
+    <span class="lang-tag">Guia de Preenchimento</span>
+  </div>
+
+  <div class="lang-bar-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-br" onclick="switchLang('br')">
+        Português
+      </button>
+      <button class="lang-btn" id="btn-co" onclick="switchLang('co')">
+        Español
+      </button>
+    </div>
+    <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="lang-portal-btn">
+      Acessar Portal →
+    </a>
+  </div>
+</div>
+
+<!-- 🇧🇷 PORTUGUÊS -->
+<div class="lang-panel active" id="panel-br">
+  <div class="hero">
+  <div class="hero-tag">Guia Oficial · Brasil FY26</div>
+  <h1>Como registrar sua ideia<br>no <span>WeInnovate</span></h1>
+  <p class="hero-sub">Tudo o que você precisa saber para enviar, validar e implementar uma ideia — passo a passo, em português.</p>
+</div>
+  <div class="layout">
+    <nav class="sidebar">
+    <div class="sidebar-section-label">Navegación</div>
+
+    <a href="#br-step1" class="nav-item active" onclick="setActive(this,'br')">
+      <div class="nav-num">1</div> Configurar Perfil
+    </a>
+    <a href="#br-step2" class="nav-item" onclick="setActive(this,'br')">
+      <div class="nav-num">2</div> Enviar una Idea
+    </a>
+    <a href="#br-step3" class="nav-item" onclick="setActive(this,'br')">
+      <div class="nav-num">3</div> Validar una Idea
+    </a>
+    <a href="#br-step4" class="nav-item" onclick="setActive(this,'br')">
+      <div class="nav-num">4</div> Implementar una Idea
+    </a>
+    <a href="#br-step5" class="nav-item" onclick="setActive(this,'br')">
+      <div class="nav-num">5</div> Sign Off
+    </a>
+    <a href="#br-step6" class="nav-item" onclick="setActive(this,'br')">
+      <div class="nav-num">6</div> Evitar Redflag
+    </a>
+    <a href="#br-step7" class="nav-item" onclick="setActive(this,'br')">
+      <div class="nav-num">7</div> Gestionar Reviewer
+    </a>
+    <a href="#br-step8" class="nav-item" onclick="setActive(this,'br')">
+      <div class="nav-num">8</div> Reportes
+    </a>
+
+    <div class="sidebar-section-label" style="margin-top:1rem">Recursos</div>
+    <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="nav-item" style="color:var(--acn-purple);font-weight:600">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Abrir Portal
+    </a>
+  </nav>
+    <main class="content">
+
+    <!-- PROGRESS TRACKER -->
+    <div class="progress-tracker">
+      <div class="pt-title">Tu progreso en esta guía</div>
+      <div class="pt-steps" id="ptSteps">
+        <div class="pt-step active"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+      </div>
+      <div class="pt-labels">
+        <div class="pt-label active">Perfil</div>
+        <div class="pt-label">Idea</div>
+        <div class="pt-label">Validar</div>
+        <div class="pt-label">Implement.</div>
+        <div class="pt-label">Sign Off</div>
+        <div class="pt-label">Redflag</div>
+        <div class="pt-label">Reviewer</div>
+        <div class="pt-label">Relatórios</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 1 — PERFIL
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step1">
+      <div class="step-header">
+        <div class="step-number">1</div>
+        <div class="step-title-block">
+          <div class="step-phase">Primeiro acesso</div>
+          <div class="step-title">Configurar seu perfil</div>
+          <div class="step-desc">Antes de enviar qualquer ideia, você precisa configurar seu perfil uma única vez com a sua estrutura organizacional correta.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <strong>Por que é importante?</strong>
+        Sem o perfil configurado corretamente, sua ideia não será associada ao deal correto e não conta para a meta do Brasil FY26.
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Acesse o portal: <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" style="color:var(--acn-purple);font-weight:600">weinnovate-operations.accenture.com</a></div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">No canto superior direito, clique na <strong>sua foto de perfil</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Clique em <strong>Editar</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Atualize os dados básicos: <code>Idioma</code> → Português e <code>E-mail do supervisor</code>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">5</div>
+          <div class="instr-text">Atualize a estrutura organizacional:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Campo</th>
+            <th>Valor para Brasil</th>
+            <th>Obrigatório</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Región</strong></td>
+            <td>Latin America</td>
+            <td><span class="field-required">OBRIGATÓRIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Localización</strong></td>
+            <td>São Paulo / Brasília (sua localidade)</td>
+            <td><span class="field-required">OBRIGATÓRIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Capability</strong></td>
+            <td>Banking / Finance / HR / Operations (conforme seu deal)</td>
+            <td><span class="field-required">OBRIGATÓRIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cliente</strong></td>
+            <td>Seu cliente no deal</td>
+            <td><span class="field-required">OBRIGATÓRIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Proceso</strong></td>
+            <td>Processo da sua área de trabalho</td>
+            <td><span class="field-required">OBRIGATÓRIO</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">6</div>
+          <div class="instr-text">Clique em <strong>Salvar alterações</strong>.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box warn" style="margin-top:1rem">
+        <strong>Nota importante</strong>
+        Si el EID de alguien que quieres agregar como Reviewer no aparece en la búsqueda, esa persona primero necesita acceder al portal y actualizar su propio perfil.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 2 — ENVIAR IDEA
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step2">
+      <div class="step-header">
+        <div class="step-number">2</div>
+        <div class="step-title-block">
+          <div class="step-phase">Participação</div>
+          <div class="step-title">Enviar uma ideia</div>
+          <div class="step-desc">O coração do programa. Registre qualquer melhoria, automação ou inovação que você já esteja fazendo ou que tenha identificado.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>💡 Dica</strong>
+        Não precisa ser algo novo ou complexo. Uma automação já deployada, um relatório que reduziu horas, um processo melhorado — tudo conta como ideia WeInnovate.
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Na tela principal, clique em <strong>Ideia</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Clique em <strong>Enviar Ideia</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Selecione o <strong>tema da sua ideia</strong> (Automação, IA, Melhoria de Processo, etc.).</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Aceite a <strong>declaração de privacidade</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">5</div>
+          <div class="instr-text">Preencha as informações básicas da ideia:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Campo</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Título da ideia</strong></td>
+            <td>Nome claro e descritivo da iniciativa
+              <div class="field-tip">Ex: "Automação de relatório diário de rejeições — Santander Nómina"</div>
+            </td>
+            <td><span class="field-required">OBRIGATÓRIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Iniciativa</strong></td>
+            <td>Tipo de solução: RPA, GenAI, Excel Macro, Reporting, etc.</td>
+            <td><span class="field-required">OBRIGATÓRIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Colaboradores</strong></td>
+            <td>Colegas que vão ajudar na implementação da ideia
+              <div class="field-tip">Adicione pelo EID ou e-mail Accenture</div>
+            </td>
+            <td><span class="field-optional">OPCIONAL</span></td>
+          </tr>
+          <tr>
+            <td><strong>Embaixadores de Inovação</strong></td>
+            <td>
+              Sempre adicione um dos embaixadores oficiais:<br>
+              <code>elaine.quirino.leite</code> o <code>adriel.souza.machado</code>
+            </td>
+            <td><span class="field-required">RECOMENDADO</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">6</div>
+          <div class="instr-text">Preencha a <strong>descrição da ideia</strong> com os três campos principais:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Campo de descripción</th>
+            <th>Qué escribir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Situação atual</strong></td>
+            <td>Descreva o problema ou processo manual que existe hoje. Seja específico — quanto tempo leva, quantas pessoas envolve, que erros gera.
+              <div class="field-tip">Ex: "O relatório de rejeições é feito manualmente todo dia, exigindo 2 horas do analista e está sujeito a erros humanos."</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Sugestão</strong></td>
+            <td>Descreva sua solução proposta. Que mudança você quer fazer ou já está implementando.
+              <div class="field-tip">Ex: "Automação do relatório via script VBA/SQL que extrai, formata e distribui o relatório diariamente sem intervenção manual."</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Benefícios</strong></td>
+            <td>Impacto esperado ou realizado: economia de tempo, redução de erros, FTE liberado, satisfação do cliente.
+              <div class="field-tip">Ex: "Eliminação de 2h/dia de trabalho manual = 0,5 FTE. Redução de 100% dos erros de digitação."</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">7</div>
+          <div class="instr-text">Se tiver documentação adicional, anexe o arquivo.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">8</div>
+          <div class="instr-text">Clique em <strong>Enviar</strong>. ✅ Sua ideia fica registrada e vai para o Reviewer para validação.</div>
+        </div>
+      </div>
+
+      <div class="ambassador-box">
+        <div class="amb-icon">🏅</div>
+        <div class="amb-content">
+          <div class="amb-label">Embaixadores de Inovação — Brasil</div>
+          <div class="amb-text">Sempre adicione um embaixador à sua ideia para garantir apoio no processo de validação e implementação.</div>
+          <div class="amb-emails">
+            <span class="amb-email">elaine.quirino.leite</span>
+            <span class="amb-email">adriel.souza.machado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 3 — VALIDAR
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step3">
+      <div class="step-header">
+        <div class="step-number">3</div>
+        <div class="step-title-block">
+          <div class="step-phase">Revisão</div>
+          <div class="step-title">Validar uma ideia</div>
+          <div class="step-desc">Como Reviewer, você receberá ideias do seu time para aprovar ou rejeitar. Aqui explicamos como fazer.</div>
+        </div>
+      </div>
+
+      <p style="font-size:0.84rem;color:var(--acn-muted);margin-bottom:1rem">Há duas formas de localizar a ideia que você precisa validar:</p>
+
+      <div class="fork">
+        <div class="fork-option with">
+          <div class="fork-option-title">📋 Sem número da ideia</div>
+          <div class="fork-step"><div class="fork-dot"></div>Na tela inicial, desça até <strong>"Minhas ações pendentes"</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Clique em <strong>"Para validação de ideias"</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Clique em <strong>Aplicar</strong></div>
+        </div>
+        <div class="fork-option without">
+          <div class="fork-option-title">🔍 Com número da ideia</div>
+          <div class="fork-step"><div class="fork-dot"></div>Na tela inicial, clique no <strong>ícone de busca (lupa)</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Digite o <strong>número da ideia</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Clique em <strong>Pesquisar</strong></div>
+        </div>
+      </div>
+
+      <div class="instr-list" style="margin-top:1rem">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Ao localizar a ideia, clique em <strong>Validar a Ideia</strong>.</div>
+        </div>
+      </div>
+
+      <div class="fork" style="margin-top:0.75rem">
+        <div class="fork-option approve">
+          <div class="fork-option-title">✅ Para APROVAR</div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Aprobar</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Indique quem será o <strong>implementador</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Defina o <strong>prazo limite de implementação</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Se já souber, informe os <strong>benefícios esperados</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Inclua um <strong>comentário</strong> e clique em <strong>Salvar</strong></div>
+        </div>
+        <div class="fork-option reject">
+          <div class="fork-option-title">❌ Para REJEITAR</div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Rechazar</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Selecione o <strong>motivo da rejeição</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Inclua um <strong>comentário</strong> explicando o motivo</div>
+          <div class="fork-step"><div class="fork-dot"></div>Clique em <strong>Salvar</strong></div>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:1rem">
+        <strong>⏰ Prazo de validação</strong>
+        As ideias têm um prazo limite para serem validadas. Se o Reviewer não agir a tempo, a ideia vira <strong>Redflag</strong> e bloqueia as métricas do deal. Valide sempre dentro do período indicado.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 4 — IMPLEMENTAR
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step4">
+      <div class="step-header">
+        <div class="step-number">4</div>
+        <div class="step-title-block">
+          <div class="step-phase">Execução</div>
+          <div class="step-title">Implementar uma ideia</div>
+          <div class="step-desc">Como implementador designado, você é responsável por executar a ideia e registrar o resultado no portal.</div>
+        </div>
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Na tela inicial, desça até o final da página e clique em <strong>Minhas Ideias</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Localize a ideia que deseja implementar e clique em <strong>Implementar Ideia</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Dentro da ideia, desça até o final da tela e escolha uma das duas opções:</div>
+        </div>
+      </div>
+
+      <div class="fork" style="margin-top:0.75rem">
+        <div class="fork-option approve">
+          <div class="fork-option-title">✅ Ideia implementada</div>
+          <div class="fork-step"><div class="fork-dot"></div>No campo <strong>"Perguntas/comentários do implementador"</strong>, descreva brevemente como foi implementada</div>
+          <div class="fork-step"><div class="fork-dot"></div>Clique em <strong>Implementado</strong></div>
+        </div>
+        <div class="fork-option reject">
+          <div class="fork-option-title">❌ Não foi possível implementar</div>
+          <div class="fork-step"><div class="fork-dot"></div>En el campo de comentarios, explica por qué no fue posible implementarla</div>
+          <div class="fork-step"><div class="fork-dot"></div>Clique em <strong>Não pode executar</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 5 — SIGN OFF
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step5">
+      <div class="step-header">
+        <div class="step-number">5</div>
+        <div class="step-title-block">
+          <div class="step-phase">Encerramento e benefícios</div>
+          <div class="step-title">Realizar o Sign Off</div>
+          <div class="step-desc">Existem dois tipos de Sign Off: o da implementação (reporta os benefícios) e o da ideia (confirmação final do Reviewer).</div>
+        </div>
+      </div>
+
+      <div style="font-size:0.88rem;font-weight:600;color:var(--acn-black);margin-bottom:0.75rem">Sign Off da Implementação</div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Localize a ideia: em <strong>"Minhas ações pendentes"</strong> → <strong>"Aprovação de implementação pendente"</strong>, ou busque pelo número.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Clique em <strong>Aprovação de implementação pendente</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Registre os benefícios obtidos:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Tipo de beneficio</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Benefícios monetários para o cliente</strong></td>
+            <td>Economia direta gerada para o cliente (USD)
+              <div class="field-tip">Ex: redução de custos operacionais, evitação de penalizações</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Benefícios monetários para a Accenture</strong></td>
+            <td>Impacto no custo de entrega, FTE liberado, produtividade</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Benefícios não monetários</strong></td>
+            <td>Melhoria de experiência, redução de erros, satisfação do time, NPS
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box warn" style="margin-top:1rem">
+        <strong>Aprovação especial para benefícios financeiros</strong>
+        Quando o Sign Off inclui benefícios financeiros, requer aprovação do <strong>Líder de Entrega</strong>, do <strong>Gerente Financeiro</strong> e do <strong>Líder da Conta</strong> antes de ser concluído.
+      </div>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Clique em <strong>Salvar rascunho e enviar</strong> (ou rejeitar se aplicável).</div>
+        </div>
+      </div>
+
+      <div style="font-size:0.88rem;font-weight:600;color:var(--acn-black);margin:1.5rem 0 0.75rem">Sign Off da Ideia (Confirmação final do Reviewer)</div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Localize a ideia: em <strong>"Minhas ações pendentes"</strong> → <strong>"Aprovação de ideia pendente"</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Haz clic en <strong>Aprobación de idea pendiente</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Dentro da ideia, desça até o final e clique em <strong>Confirmação de implementação</strong>. A ideia fica oficialmente encerrada. 🎉</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 6 — REDFLAG
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step6">
+      <div class="step-header">
+        <div class="step-number">6</div>
+        <div class="step-title-block">
+          <div class="step-phase">Alerta crítico</div>
+          <div class="step-title">Como evitar o Redflag</div>
+          <div class="step-desc">O Redflag é o maior risco operacional do programa. Uma ideia em redflag bloqueia as métricas do deal e afeta o ranking global.</div>
+        </div>
+      </div>
+
+      <div class="redflag-card">
+        <div class="redflag-title">⛔ O que é um Redflag?</div>
+        <ul class="redflag-list">
+          <li>Si una idea pierde el plazo en cualquier etapa, se convierte en <strong>Redflag automáticamente</strong>.</li>
+          <li>Una idea en Redflag queda <strong>bloqueada en el sistema</strong> — no avanza ni puede completarse.</li>
+          <li>Afecta directamente las <strong>métricas globales del deal</strong> y el score del Reviewer ofensor.</li>
+          <li>Para desbloquearse, <strong>es necesario registrar la idea desde cero</strong>.</li>
+        </ul>
+      </div>
+
+      <p style="font-size:0.84rem;font-weight:600;color:var(--acn-black);margin:1.2rem 0 0.6rem">Las 3 situaciones que generan Redflag:</p>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num" style="background:var(--danger)">!</div>
+          <div class="instr-text"><strong>Ideas paradas en la fase de validación</strong> — El Reviewer no validó la idea dentro del plazo establecido.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num" style="background:var(--danger)">!</div>
+          <div class="instr-text"><strong>Ideas implementadas sin firma del Reviewer</strong> — La idea fue implementada pero el Reviewer no completó el Sign Off de implementación.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num" style="background:var(--danger)">!</div>
+          <div class="instr-text"><strong>Ideas con Sign Off de implementación pero sin confirmación final</strong> — Los beneficios fueron documentados pero el Reviewer no hizo la confirmación final de la idea.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box success" style="margin-top:1rem">
+        <strong>✅ Como evitar</strong>
+        Actúa en cada acción pendiente tan pronto como te llegue la notificación. Revisa semanalmente la sección <strong>"Mis acciones pendientes"</strong> en el portal para no dejar nada atrasado.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 7 — REVIEWER
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step7">
+      <div class="step-header">
+        <div class="step-number">7</div>
+        <div class="step-title-block">
+          <div class="step-phase">Administração</div>
+          <div class="step-title">Gestionar Revisores</div>
+          <div class="step-desc">Os líderes de deal são responsáveis por registrar e atualizar quem faz o papel de Reviewer em cada processo.</div>
+        </div>
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Na tela inicial, clique em <strong>Biblioteca</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Clique em <strong>Configuração do Avaliador</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Informa los datos de la estructura (Región, Localización, Capability, Cliente, Proceso) a la cual quieres agregar/actualizar el Reviewer.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text"><strong>Para agregar:</strong> escribe el EID en el campo de búsqueda y haz clic en <strong>Agregar Nuevo</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">5</div>
+          <div class="instr-text"><strong>Para eliminar:</strong> localiza el nombre del Reviewer y haz clic en la <strong>"x"</strong> al lado del nombre.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box warn" style="margin-top:1rem">
+        <strong>EID não aparece na busca</strong>
+        Si el EID de quien quieres agregar como Reviewer no aparece, esa persona primero necesita acceder al portal WeInnovate y actualizar su perfil. Después estará disponible para ser agregada.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 8 — REPORTES
+    ══════════════════════════════════ -->
+    <div class="step-section" id="br-step8">
+      <div class="step-header">
+        <div class="step-number">8</div>
+        <div class="step-title-block">
+          <div class="step-phase">Acompanhamento</div>
+          <div class="step-title">Acessar os relatórios</div>
+          <div class="step-desc">O portal oferece relatórios detalhados por deal, região e pessoa para que você possa acompanhar as metas.</div>
+        </div>
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Na tela inicial, clique em <strong>Biblioteca</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Clique em <strong>Menu de Relatórios</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Aparecerão todos os relatórios disponíveis no seu perfil. Clique no relatório que deseja extrair.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Preencha os campos solicitados (período, deal, região, etc.) e baixe o relatório.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>💡 Relatórios personalizados</strong>
+        Relatórios detalhados e personalizados podem ser configurados pelo BT Lead / focal de cada conta, pois cada deal tem requisitos distintos de visualização.
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-section-text">
+        <h3>Pronto para enviar sua primeira ideia?</h3>
+        <p>Acesse o portal agora e registre sua contribuição para o FY26.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="cta-btn-primary">
+          Acessar o Portal WeInnovate →
+        </a>
+        <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="cta-btn-secondary">
+          Ver minhas ações pendentes
+        </a>
+      </div>
+    </div>
+
+  </main>
+  </div>
+</div>
+
+<!-- 🇨🇴 ESPAÑOL -->
+<div class="lang-panel" id="panel-co">
+  <div class="hero">
+  <div class="hero-tag">Guía Oficial · Colombia FY26</div>
+  <h1>Cómo registrar tu idea<br>en <span>WeInnovate</span></h1>
+  <p class="hero-sub">Todo lo que necesitas saber para enviar, validar e implementar una idea — paso a paso, adaptado para Colombia.</p>
+</div>
+  <div class="layout">
+    <nav class="sidebar">
+    <div class="sidebar-section-label">Navegación</div>
+
+    <a href="#co-step1" class="nav-item active" onclick="setActive(this,'co')">
+      <div class="nav-num">1</div> Configurar Perfil
+    </a>
+    <a href="#co-step2" class="nav-item" onclick="setActive(this,'co')">
+      <div class="nav-num">2</div> Enviar una Idea
+    </a>
+    <a href="#co-step3" class="nav-item" onclick="setActive(this,'co')">
+      <div class="nav-num">3</div> Validar una Idea
+    </a>
+    <a href="#co-step4" class="nav-item" onclick="setActive(this,'co')">
+      <div class="nav-num">4</div> Implementar una Idea
+    </a>
+    <a href="#co-step5" class="nav-item" onclick="setActive(this,'co')">
+      <div class="nav-num">5</div> Sign Off
+    </a>
+    <a href="#co-step6" class="nav-item" onclick="setActive(this,'co')">
+      <div class="nav-num">6</div> Evitar Redflag
+    </a>
+    <a href="#co-step7" class="nav-item" onclick="setActive(this,'co')">
+      <div class="nav-num">7</div> Gestionar Reviewer
+    </a>
+    <a href="#co-step8" class="nav-item" onclick="setActive(this,'co')">
+      <div class="nav-num">8</div> Reportes
+    </a>
+
+    <div class="sidebar-section-label" style="margin-top:1rem">Recursos</div>
+    <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="nav-item" style="color:var(--acn-purple);font-weight:600">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Abrir Portal
+    </a>
+  </nav>
+    <main class="content">
+
+    <!-- PROGRESS TRACKER -->
+    <div class="progress-tracker">
+      <div class="pt-title">Tu progreso en esta guía</div>
+      <div class="pt-steps" id="ptSteps">
+        <div class="pt-step active"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+        <div class="pt-step"></div>
+      </div>
+      <div class="pt-labels">
+        <div class="pt-label active">Perfil</div>
+        <div class="pt-label">Idea</div>
+        <div class="pt-label">Validar</div>
+        <div class="pt-label">Implement.</div>
+        <div class="pt-label">Sign Off</div>
+        <div class="pt-label">Redflag</div>
+        <div class="pt-label">Reviewer</div>
+        <div class="pt-label">Reportes</div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 1 — PERFIL
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step1">
+      <div class="step-header">
+        <div class="step-number">1</div>
+        <div class="step-title-block">
+          <div class="step-phase">Primer acceso</div>
+          <div class="step-title">Configurar tu perfil</div>
+          <div class="step-desc">Antes de enviar cualquier idea, necesitas configurar tu perfil una sola vez con tu estructura organizacional correcta.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <strong>¿Por qué es importante?</strong>
+        Sin el perfil configurado correctamente, tu idea no se asocia al deal correcto y no cuenta para la meta de Colombia FY26.
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Accede al portal: <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" style="color:var(--acn-purple);font-weight:600">weinnovate-operations.accenture.com</a></div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">En la esquina superior derecha, haz clic en <strong>tu foto de perfil</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Haz clic en <strong>Editar</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Actualiza los datos básicos: <code>Idioma</code> → Español y <code>Email del supervisor</code>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">5</div>
+          <div class="instr-text">Actualiza la estructura organizacional:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Campo</th>
+            <th>Valor para México</th>
+            <th>Obligatorio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Región</strong></td>
+            <td>Latin America</td>
+            <td><span class="field-required">OBLIGATORIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Localización</strong></td>
+            <td>Bogotá / Medellín (tu ciudad)</td>
+            <td><span class="field-required">OBLIGATORIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Capability</strong></td>
+            <td>Banking / Finance / HR / Operations (según tu deal)</td>
+            <td><span class="field-required">OBLIGATORIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cliente</strong></td>
+            <td>Tu cliente en el deal</td>
+            <td><span class="field-required">OBLIGATORIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Proceso</strong></td>
+            <td>Proceso de tu área de trabajo</td>
+            <td><span class="field-required">OBLIGATORIO</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">6</div>
+          <div class="instr-text">Haz clic en <strong>Guardar cambios</strong>.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box warn" style="margin-top:1rem">
+        <strong>Nota importante</strong>
+        Si el EID de alguien que quieres agregar como Reviewer no aparece en la búsqueda, esa persona primero necesita acceder al portal y actualizar su propio perfil.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 2 — ENVIAR IDEA
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step2">
+      <div class="step-header">
+        <div class="step-number">2</div>
+        <div class="step-title-block">
+          <div class="step-phase">Participación</div>
+          <div class="step-title">Enviar una idea</div>
+          <div class="step-desc">El corazón del programa. Registra cualquier mejora, automatización o innovación que ya estés haciendo o que hayas identificado.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>💡 Tip</strong>
+        No necesita ser algo nuevo o complejo. Una automatización ya deployada, un reporte que redujo horas, un proceso mejorado — todo cuenta como idea WeInnovate.
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">En la pantalla principal, haz clic en <strong>Idea</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Haz clic en <strong>Enviar Idea</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Selecciona el <strong>tema de tu idea</strong> (Automatización, IA, Mejora de Proceso, etc.).</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Acepta la <strong>declaración de privacidad</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">5</div>
+          <div class="instr-text">Completa la información básica de la idea:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Campo</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Título de la idea</strong></td>
+            <td>Nombre claro y descriptivo de la iniciativa
+              <div class="field-tip">Ej: "Automatización de reporte diario de rechazos — Santander Nómina"</div>
+            </td>
+            <td><span class="field-required">OBLIGATORIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Iniciativa</strong></td>
+            <td>Tipo de solución: RPA, GenAI, Excel Macro, Reporting, etc.</td>
+            <td><span class="field-required">OBLIGATORIO</span></td>
+          </tr>
+          <tr>
+            <td><strong>Colaboradores</strong></td>
+            <td>Colegas que ayudarán en la implementación de la idea
+              <div class="field-tip">Agrégalos por EID o email Accenture</div>
+            </td>
+            <td><span class="field-optional">OPCIONAL</span></td>
+          </tr>
+          <tr>
+            <td><strong>Embajadores de Innovación</strong></td>
+            <td>
+              Siempre agrega uno de los embajadores oficiales:<br>
+              <code>elaine.quirino.leite</code> o <code>adriel.souza.machado</code>
+            </td>
+            <td><span class="field-required">RECOMENDADO</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">6</div>
+          <div class="instr-text">Completa la <strong>descripción de la idea</strong> con los tres campos clave:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Campo de descripción</th>
+            <th>Qué escribir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Situación actual</strong></td>
+            <td>Describe el problema o proceso manual que existe hoy. Sé específico — cuánto tiempo toma, cuántas personas involucra, qué errores genera.
+              <div class="field-tip">Ej: "El reporte de rechazos se elabora manualmente cada día, requiriendo 2 horas del analista y está sujeto a errores humanos."</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Sugerencia</strong></td>
+            <td>Describe tu solución propuesta. Qué cambio quieres hacer o ya estás implementando.
+              <div class="field-tip">Ej: "Automatización del reporte vía script VBA/SQL que extrae, formatea y distribuye el reporte diariamente sin intervención manual."</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Beneficios</strong></td>
+            <td>Impacto esperado o realizado: ahorro de tiempo, reducción de errores, FTE liberado, satisfacción del cliente.
+              <div class="field-tip">Ej: "Eliminación de 2h/día de trabajo manual = 0.5 FTE. Reducción de 100% de errores de digitación."</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">7</div>
+          <div class="instr-text">Si tienes documentación adicional, adjunta el archivo.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">8</div>
+          <div class="instr-text">Haz clic en <strong>Enviar</strong>. ✅ Tu idea queda registrada y va al Reviewer para validación.</div>
+        </div>
+      </div>
+
+      <div class="ambassador-box">
+        <div class="amb-icon">🏅</div>
+        <div class="amb-content">
+          <div class="amb-label">Embajadores de Innovación — Colombia</div>
+          <div class="amb-text">Siempre agrega un embajador a tu idea para garantizar apoyo en el proceso de validación e implementación.</div>
+          <div class="amb-emails">
+            <span class="amb-email">elaine.quirino.leite</span>
+            <span class="amb-email">adriel.souza.machado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 3 — VALIDAR
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step3">
+      <div class="step-header">
+        <div class="step-number">3</div>
+        <div class="step-title-block">
+          <div class="step-phase">Revisión</div>
+          <div class="step-title">Validar una idea</div>
+          <div class="step-desc">Como Reviewer, recibirás ideas de tu equipo para aprobar o rechazar. Aquí explicamos cómo hacerlo.</div>
+        </div>
+      </div>
+
+      <p style="font-size:0.84rem;color:var(--acn-muted);margin-bottom:1rem">Hay dos formas de localizar la idea que necesitas validar:</p>
+
+      <div class="fork">
+        <div class="fork-option with">
+          <div class="fork-option-title">📋 Sin número de idea</div>
+          <div class="fork-step"><div class="fork-dot"></div>En la pantalla inicial, baja hasta <strong>"Mis acciones pendientes"</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>"Para validación de ideas"</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Aplicar</strong></div>
+        </div>
+        <div class="fork-option without">
+          <div class="fork-option-title">🔍 Con número de idea</div>
+          <div class="fork-step"><div class="fork-dot"></div>En la pantalla inicial, haz clic en el <strong>ícono de búsqueda (lupa)</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Escribe el <strong>número de la idea</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Buscar</strong></div>
+        </div>
+      </div>
+
+      <div class="instr-list" style="margin-top:1rem">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Al localizar la idea, haz clic en <strong>Validar la Idea</strong>.</div>
+        </div>
+      </div>
+
+      <div class="fork" style="margin-top:0.75rem">
+        <div class="fork-option approve">
+          <div class="fork-option-title">✅ Para APROBAR</div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Aprobar</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Indica quién será el <strong>implementador</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Define la <strong>fecha límite de implementación</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Si ya sabes, informa los <strong>beneficios esperados</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Incluye un <strong>comentario</strong> y haz clic en <strong>Guardar</strong></div>
+        </div>
+        <div class="fork-option reject">
+          <div class="fork-option-title">❌ Para RECHAZAR</div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Rechazar</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Selecciona el <strong>motivo del rechazo</strong></div>
+          <div class="fork-step"><div class="fork-dot"></div>Incluye un <strong>comentario</strong> explicando el motivo</div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Guardar</strong></div>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:1rem">
+        <strong>⏰ Plazo de validación</strong>
+        Las ideas tienen un plazo límite para ser validadas. Si el Reviewer no actúa a tiempo, la idea se convierte en <strong>Redflag</strong> y bloquea las métricas del deal. Valida siempre dentro del período indicado.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 4 — IMPLEMENTAR
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step4">
+      <div class="step-header">
+        <div class="step-number">4</div>
+        <div class="step-title-block">
+          <div class="step-phase">Ejecución</div>
+          <div class="step-title">Implementar una idea</div>
+          <div class="step-desc">Como implementador designado, eres responsable de ejecutar la idea y registrar el resultado en el portal.</div>
+        </div>
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">En la pantalla inicial, baja hasta el final de la página y haz clic en <strong>Mis Ideas</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Localiza la idea que deseas implementar y haz clic en <strong>Implementar Idea</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Dentro de la idea, baja hasta el final de la pantalla y elige una de las dos opciones:</div>
+        </div>
+      </div>
+
+      <div class="fork" style="margin-top:0.75rem">
+        <div class="fork-option approve">
+          <div class="fork-option-title">✅ Idea implementada</div>
+          <div class="fork-step"><div class="fork-dot"></div>En el campo <strong>"Preguntas/comentarios del implementador"</strong>, describe brevemente cómo fue implementada</div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>Implementado</strong></div>
+        </div>
+        <div class="fork-option reject">
+          <div class="fork-option-title">❌ No se pudo implementar</div>
+          <div class="fork-step"><div class="fork-dot"></div>En el campo de comentarios, explica por qué no fue posible implementarla</div>
+          <div class="fork-step"><div class="fork-dot"></div>Haz clic en <strong>No puede ejecutar</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 5 — SIGN OFF
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step5">
+      <div class="step-header">
+        <div class="step-number">5</div>
+        <div class="step-title-block">
+          <div class="step-phase">Cierre y beneficios</div>
+          <div class="step-title">Realizar el Sign Off</div>
+          <div class="step-desc">Existen dos tipos de Sign Off: el de la implementación (reporta los beneficios) y el de la idea (confirmación final del Reviewer).</div>
+        </div>
+      </div>
+
+      <div style="font-size:0.88rem;font-weight:600;color:var(--acn-black);margin-bottom:0.75rem">Sign Off de la Implementación</div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Localiza la idea: en <strong>"Mis acciones pendientes"</strong> → <strong>"Aprobación de implementación pendiente"</strong>, o búscala por número.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Haz clic en <strong>Aprobación de implementación pendiente</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Registra los beneficios obtenidos:</div>
+        </div>
+      </div>
+
+      <table class="field-table" style="margin-top:0.5rem">
+        <thead>
+          <tr>
+            <th>Tipo de beneficio</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Beneficios monetarios para el cliente</strong></td>
+            <td>Ahorro directo generado para el cliente (USD)
+              <div class="field-tip">Ej: reducción de costos operativos, evitación de penalizaciones</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Beneficios monetarios para Accenture</strong></td>
+            <td>Impacto en costo de entrega, FTE liberado, productividad</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Beneficios no monetarios</strong></td>
+            <td>Mejora de experiencia, reducción de errores, satisfacción del equipo, NPS
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box warn" style="margin-top:1rem">
+        <strong>Aprobación especial para beneficios financieros</strong>
+        Cuando el Sign Off incluye beneficios financieros, requiere aprobación del <strong>Líder de Entrega</strong>, del <strong>Gerente Financiero</strong> y del <strong>Líder de la Cuenta</strong> antes de ser completado.
+      </div>
+
+      <div class="instr-list" style="margin-top:0.75rem">
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Haz clic en <strong>Guardar borrador y enviar</strong> (o rechazar si aplica).</div>
+        </div>
+      </div>
+
+      <div style="font-size:0.88rem;font-weight:600;color:var(--acn-black);margin:1.5rem 0 0.75rem">Sign Off de la Idea (Confirmación final del Reviewer)</div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">Localiza la idea: en <strong>"Mis acciones pendientes"</strong> → <strong>"Aprobación de idea pendiente"</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Haz clic en <strong>Aprobación de idea pendiente</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Dentro de la idea, baja hasta el final y haz clic en <strong>Confirmación de implementación</strong>. La idea queda oficialmente cerrada. 🎉</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 6 — REDFLAG
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step6">
+      <div class="step-header">
+        <div class="step-number">6</div>
+        <div class="step-title-block">
+          <div class="step-phase">Alerta crítica</div>
+          <div class="step-title">Cómo evitar el Redflag</div>
+          <div class="step-desc">El Redflag es el mayor riesgo operativo del programa. Una idea en redflag bloquea las métricas del deal y afecta el ranking global.</div>
+        </div>
+      </div>
+
+      <div class="redflag-card">
+        <div class="redflag-title">⛔ ¿Qué es un Redflag?</div>
+        <ul class="redflag-list">
+          <li>Si una idea pierde el plazo en cualquier etapa, se convierte en <strong>Redflag automáticamente</strong>.</li>
+          <li>Una idea en Redflag queda <strong>bloqueada en el sistema</strong> — no avanza ni puede completarse.</li>
+          <li>Afecta directamente las <strong>métricas globales del deal</strong> y el score del Reviewer ofensor.</li>
+          <li>Para desbloquearse, <strong>es necesario registrar la idea desde cero</strong>.</li>
+        </ul>
+      </div>
+
+      <p style="font-size:0.84rem;font-weight:600;color:var(--acn-black);margin:1.2rem 0 0.6rem">Las 3 situaciones que generan Redflag:</p>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num" style="background:var(--danger)">!</div>
+          <div class="instr-text"><strong>Ideas paradas en la fase de validación</strong> — El Reviewer no validó la idea dentro del plazo establecido.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num" style="background:var(--danger)">!</div>
+          <div class="instr-text"><strong>Ideas implementadas sin firma del Reviewer</strong> — La idea fue implementada pero el Reviewer no completó el Sign Off de implementación.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num" style="background:var(--danger)">!</div>
+          <div class="instr-text"><strong>Ideas con Sign Off de implementación pero sin confirmación final</strong> — Los beneficios fueron documentados pero el Reviewer no hizo la confirmación final de la idea.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box success" style="margin-top:1rem">
+        <strong>✅ Cómo evitarlo</strong>
+        Actúa en cada acción pendiente tan pronto como te llegue la notificación. Revisa semanalmente la sección <strong>"Mis acciones pendientes"</strong> en el portal para no dejar nada atrasado.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 7 — REVIEWER
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step7">
+      <div class="step-header">
+        <div class="step-number">7</div>
+        <div class="step-title-block">
+          <div class="step-phase">Administración</div>
+          <div class="step-title">Gestionar Reviewers</div>
+          <div class="step-desc">Los líderes de deal son responsables de registrar y actualizar quién hace el papel de Reviewer en cada proceso.</div>
+        </div>
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">En la pantalla inicial, haz clic en <strong>Biblioteca</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Haz clic en <strong>Configuración del Evaluador</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Informa los datos de la estructura (Región, Localización, Capability, Cliente, Proceso) a la cual quieres agregar/actualizar el Reviewer.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text"><strong>Para agregar:</strong> escribe el EID en el campo de búsqueda y haz clic en <strong>Agregar Nuevo</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">5</div>
+          <div class="instr-text"><strong>Para eliminar:</strong> localiza el nombre del Reviewer y haz clic en la <strong>"x"</strong> al lado del nombre.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box warn" style="margin-top:1rem">
+        <strong>EID no aparece en la búsqueda</strong>
+        Si el EID de quien quieres agregar como Reviewer no aparece, esa persona primero necesita acceder al portal WeInnovate y actualizar su perfil. Después estará disponible para ser agregada.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         STEP 8 — REPORTES
+    ══════════════════════════════════ -->
+    <div class="step-section" id="co-step8">
+      <div class="step-header">
+        <div class="step-number">8</div>
+        <div class="step-title-block">
+          <div class="step-phase">Seguimiento</div>
+          <div class="step-title">Acceder a los reportes</div>
+          <div class="step-desc">El portal ofrece reportes detallados por deal, región y persona para que puedas hacer seguimiento de las metas.</div>
+        </div>
+      </div>
+
+      <div class="instr-list">
+        <div class="instr-item">
+          <div class="instr-num">1</div>
+          <div class="instr-text">En la pantalla inicial, haz clic en <strong>Biblioteca</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">2</div>
+          <div class="instr-text">Haz clic en <strong>Menú de Reportes</strong>.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">3</div>
+          <div class="instr-text">Aparecerán todos los reportes disponibles en tu perfil. Haz clic en el reporte que deseas extraer.</div>
+        </div>
+        <div class="instr-item">
+          <div class="instr-num">4</div>
+          <div class="instr-text">Completa los campos solicitados (período, deal, región, etc.) y descarga el reporte.</div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>💡 Reportes personalizados</strong>
+        Reportes detallados y personalizados pueden ser configurados por el BT Lead / focal de cada cuenta, ya que cada deal tiene requisitos distintos de visualización.
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-section-text">
+        <h3>¿Listo para enviar tu primera idea?</h3>
+        <p>Accede al portal ahora y registra tu contribución para Colombia FY26.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="cta-btn-primary">
+          Acceder al Portal WeInnovate →
+        </a>
+        <a href="https://weinnovate-operations.accenture.com/UserProfile" target="_blank" class="cta-btn-secondary">
+          Ver mis acciones pendientes
+        </a>
+      </div>
+    </div>
+
+  </main>
+  </div>
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + lang).classList.add('active');
+    document.getElementById('btn-' + lang).classList.add('active');
+    // Update portal button label
+    var portalBtn = document.querySelector('.lang-portal-btn');
+    if (portalBtn) portalBtn.textContent = lang === 'br' ? 'Acessar Portal →' : 'Acceder al Portal →';
+    // Update guide tag
+    var tag = document.querySelector('.lang-tag');
+    if (tag) tag.textContent = lang === 'br' ? 'Guia de Preenchimento' : 'Guía de Registro';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function setActive(el, lang) {
+    var panel = document.getElementById('panel-' + lang);
+    if (panel) panel.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+    var stepNum = parseInt(el.getAttribute('href').replace('#' + lang + '-step', '')) - 1;
+    updateProgress(lang, stepNum);
+  }
+
+  function updateProgress(lang, activeIdx) {
+    var steps  = document.querySelectorAll('#panel-' + lang + ' .pt-step');
+    var labels = document.querySelectorAll('#panel-' + lang + ' .pt-label');
+    steps.forEach(function(s, i) {
+      s.classList.remove('active', 'done');
+      if (labels[i]) labels[i].classList.remove('active');
+      if (i < activeIdx) s.classList.add('done');
+      else if (i === activeIdx) {
+        s.classList.add('active');
+        if (labels[i]) labels[i].classList.add('active');
+      }
+    });
+  }
+
+  // Scroll spy
+  ['br','co'].forEach(function(lang) {
+    var panel = document.getElementById('panel-' + lang);
+    if (!panel) return;
+    var sections = panel.querySelectorAll('.step-section');
+    var navItems = panel.querySelectorAll('.nav-item');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          var num = parseInt(id.replace(lang + '-step', '')) - 1;
+          navItems.forEach(function(n) { n.classList.remove('active'); });
+          var match = panel.querySelector('.nav-item[href="#' + id + '"]');
+          if (match) match.classList.add('active');
+          updateProgress(lang, num);
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function(s) { observer.observe(s); });
+  });
+</script>
+
+</body>
+</html>
